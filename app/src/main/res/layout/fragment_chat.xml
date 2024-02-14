@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ChatFragment"
+    >
+
+    <data>
+         <variable
+            name="chatItem"
+            type="com.example.whatsapphomepage.ChatItem" />
+        <variable
+            name="viewModel"
+            type="com.example.whatsapphomepage.ViewModel" />
+
+
+    </data>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include
+                android:id="@+id/name_layout"
+                layout="@layout/name_bar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                app:chatItem="@{chatItem}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:viewModel="@{viewModel}" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/bottomlayout"
+                android:background="@drawable/backgroundwallpaper"
+                android:src="@drawable/backgroundwallpaper">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height"
+                        android:layout_marginTop="4dp" />
+
+                    <include
+                        layout="@layout/recieve_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/recieve_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/recieve_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/recieve_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/recieve_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/recieve_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/recieve_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/recieve_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+
+                    <include
+                        layout="@layout/send_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/text_layout_height" />
+                </LinearLayout>
+            </ScrollView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bottomlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="bottom"
+                android:background="#A6ECEAEA">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="48dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <ImageView
+                        android:id="@+id/iv_plus_icon"
+                        android:layout_width="38dp"
+                        android:layout_height="25dp"
+                        android:layout_marginTop="12dp"
+                        app:layout_constraintEnd_toStartOf="@+id/et_textinput"
+                        app:layout_constraintHorizontal_bias="0.79"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/outline_add_24"/>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/et_textinput"
+                        android:layout_width="233dp"
+                        android:layout_height="26dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_marginEnd="8dp"
+                        android:background="@drawable/rounded_recieve"
+                        android:hint="@string/text_input"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_camera_icon"
+                        app:layout_constraintStart_toEndOf="@+id/iv_plus_icon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/rounded_recieve"/>
+
+                    <ImageView
+                        android:id="@+id/iv_camera_icon"
+                        android:layout_width="32dp"
+                        android:layout_height="21dp"
+                        android:layout_marginStart="12dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintEnd_toStartOf="@+id/iv_mic"
+                        app:layout_constraintHorizontal_bias="0.2"
+                        app:layout_constraintStart_toEndOf="@+id/et_textinput"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/photo_camera_outline"/>
+
+                    <ImageView
+                        android:id="@+id/iv_mic"
+                        android:layout_width="35dp"
+                        android:layout_height="22dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="4dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        android:src="@drawable/mic__1_"/>
+
+                    <ImageView
+                        android:id="@+id/iv_stickynote"
+                        android:layout_width="26dp"
+                        android:layout_height="17dp"
+                        android:layout_marginEnd="20dp"
+                        app:layout_constraintBottom_toBottomOf="@+id/et_textinput"
+                        app:layout_constraintEnd_toEndOf="@+id/et_textinput"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@+id/guideline2"
+                        app:layout_constraintTop_toTopOf="@+id/et_textinput"
+                        app:layout_constraintVertical_bias="0.6"
+                        android:src="@drawable/sticky_note"/>
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/guideline2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="false"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="112dp"
+                        app:layout_constraintGuide_percent="0.6" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+</layout>

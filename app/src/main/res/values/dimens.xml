@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="video_icon_width">62dp</dimen>
+    <dimen name="video_icon_height">24dp</dimen>
+    <dimen name="text_height">18dp</dimen>
+    <dimen name="text_layout_height">27dp</dimen>
+</resources>

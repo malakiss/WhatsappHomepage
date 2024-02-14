@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".HomeFragment">
+    <data>
+
+        <variable
+            name="chatItems"
+            type="java.util.List&lt;com.example.whatsapphomepage.ChatItem&gt;" />
+
+        <variable
+            name="viewModel"
+            type="com.example.whatsapphomepage.ViewModel" />
+    </data>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_chat_at_top"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/chats"
+                android:textAlignment="textStart"
+                android:textColor="@color/black"
+                android:textSize="34sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/cl_searchbar_layout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--Search layout-->
+            <include layout="@layout/search_layout" />
+            <!--Archive layout-->
+            <include
+                layout="@layout/archive_layout"
+                app:viewModel="@{viewModel}" />
+            <!-- All chats-->
+
+            <include
+                android:id="@+id/divider1"
+                layout="@layout/divider_view" />
+
+
+            <include
+                android:id="@+id/chat0"
+                layout="@layout/item_chat"
+                app:chatItem="@{chatItems[0]}"
+                app:viewModel="@{viewModel}" />
+
+
+            <include
+                android:id="@+id/divider2"
+                layout="@layout/divider_view" />
+
+            <include
+                android:id="@+id/chat1"
+                layout="@layout/item_chat"
+                app:chatItem="@{chatItems[1]}"
+                app:viewModel="@{viewModel}" />
+
+
+            <include
+                android:id="@+id/divider3"
+                layout="@layout/divider_view" />
+
+            <include
+                android:id="@+id/chat2"
+                layout="@layout/item_chat"
+                app:chatItem="@{chatItems[2]}"
+                app:viewModel="@{viewModel}" />
+
+            <include
+                android:id="@+id/divider4"
+                layout="@layout/divider_view" />
+
+            <include
+                android:id="@+id/chat3"
+                layout="@layout/item_chat"
+                app:chatItem="@{chatItems[3]}"
+                app:viewModel="@{viewModel}" />
+
+
+            <include
+                android:id="@+id/divider5"
+                layout="@layout/divider_view" />
+
+            <include
+                android:id="@+id/chat4"
+                layout="@layout/item_chat"
+                app:chatItem="@{chatItems[4]}"
+                app:viewModel="@{viewModel}">
+
+            </include>
+        </LinearLayout>
+    </ScrollView>
+</layout>

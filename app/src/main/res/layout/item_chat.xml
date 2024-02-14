@@ -1,0 +1,102 @@
+<layout
+    >
+    <data>
+        <variable
+            name="chatItem"
+            type="com.example.whatsapphomepage.ChatItem" />
+        <variable
+            name="viewModel"
+            type="com.example.whatsapphomepage.ViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="73dp"
+        android:orientation="horizontal"
+        android:onClick="@{viewModel.onChatClick(chatItem)}">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profile_image2"
+            android:layout_width="69dp"
+            android:layout_height="63dp"
+            android:layout_marginStart="8dp"
+            android:padding="5dp"
+            android:src="@{context.getDrawable(chatItem.profilePictureResId)}"
+            app:civ_border_color="@color/black"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.529" />
+
+        <TextView
+            android:id="@+id/lastMessage2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:paddingTop="2dp"
+            android:paddingBottom="2dp"
+            android:text="@string/last_message"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
+            app:layout_constraintTop_toBottomOf="@+id/usernameList2"
+            app:layout_constraintVertical_bias="0.194"
+            android:onClick="@{viewModel.onChatClick(chatItem)}"/>
+
+        <TextView
+            android:id="@+id/usernameList2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="@{chatItem.username}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/profile_image2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/dateText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@{chatItem.dateText}"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/lastMessage2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toEndOf="@+id/usernameList2"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="25dp"
+            android:layout_height="18dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@null"
+            android:src="@drawable/two_ticks"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/profile_image2"
+            app:layout_constraintTop_toBottomOf="@+id/usernameList2"
+            app:layout_constraintVertical_bias="0.216" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
